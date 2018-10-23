@@ -42,11 +42,17 @@
                 <!--android:layout_height="match_parent" />-->
 
     <br.com.felix.imagezoom.ImageZoom
-        android:id="@+id/fotoKamar"
+        android:id="@+id/fotoKamar2"
         android:adjustViewBounds="true"
         android:src="@drawable/star"
-        android:layout_width="50dp"
-        android:layout_height="50dp" />
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <com.ladwa.aditya.greytouchimageview.GreyTouchImageView
+        android:id="@+id/fotoKamar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/star"/>
 
             <!--<com.example.imagewatermark2.ImageWaterMarkView-->
                 <!--android:id="@+id/fotoKamar"-->

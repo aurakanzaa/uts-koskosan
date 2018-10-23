@@ -37,5 +37,6 @@ dependencies {
     implementation project(path: ':imagewatermark2')
 
     implementation 'com.github.felixsoares:ImageZoom:1.0'
+    implementation 'com.github.LadwaAditya:GreyTouchImageView:1.0'
 }
 apply plugin: 'com.google.gms.google-services'

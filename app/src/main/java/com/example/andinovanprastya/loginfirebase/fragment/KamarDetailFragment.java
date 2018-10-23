@@ -16,6 +16,7 @@ import com.example.andinovanprastya.loginfirebase.model.Kamar;
 import com.example.imagewatermark2.ImageWaterMarkView;
 import com.example.imagewatermark2.WaterMarkParamBean;
 import com.example.imagewatermark2.WaterMarkType;
+import com.ladwa.aditya.greytouchimageview.GreyTouchImageView;
 
 import java.util.ArrayList;
 
@@ -75,8 +76,13 @@ public class KamarDetailFragment extends Fragment {
 //            ImageView img = view.findViewById(R.id.fotoKamar);
 //            img.setImageResource(tipekamar.getGambar());
 
-            ImageZoom img = view.findViewById(R.id.fotoKamar);
+            ImageZoom img2 = view.findViewById(R.id.fotoKamar2);
+            img2.setImageResource(tipekamar.getGambar());
+
+
+            GreyTouchImageView img = view.findViewById(R.id.fotoKamar);
             img.setImageResource(tipekamar.getGambar());
+
 
 //            waterMarkView= (ImageWaterMarkView) view.findViewById(R.id.fotoKamar);
 //            waterMarkView.setImageBitmap(BitmapFactory.decodeResource(getResources(),tipekamar.getGambar()));
