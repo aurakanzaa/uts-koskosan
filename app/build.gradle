@@ -35,5 +35,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.0.1'
 
     implementation project(path: ':imagewatermark2')
+
+    implementation 'com.github.felixsoares:ImageZoom:1.0'
 }
 apply plugin: 'com.google.gms.google-services'

@@ -19,6 +19,8 @@ import com.example.imagewatermark2.WaterMarkType;
 
 import java.util.ArrayList;
 
+import br.com.felix.imagezoom.ImageZoom;
+
 
 public class KamarDetailFragment extends Fragment {
     private long kosId;
@@ -70,7 +72,10 @@ public class KamarDetailFragment extends Fragment {
             TextView harga = view.findViewById(R.id.textPrice);
             harga.setText(tipekamar.getHarga());
 
-            ImageView img = view.findViewById(R.id.fotoKamar);
+//            ImageView img = view.findViewById(R.id.fotoKamar);
+//            img.setImageResource(tipekamar.getGambar());
+
+            ImageZoom img = view.findViewById(R.id.fotoKamar);
             img.setImageResource(tipekamar.getGambar());
 
 //            waterMarkView= (ImageWaterMarkView) view.findViewById(R.id.fotoKamar);

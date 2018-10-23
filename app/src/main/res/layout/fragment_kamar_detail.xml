@@ -35,11 +35,18 @@
                 android:text="harga ini"
                 android:id="@+id/textPrice"/>
 
-            <ImageView
-                android:id="@+id/fotoKamar"
-                android:src="@drawable/star"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+            <!--<ImageView-->
+                <!--android:id="@+id/fotoKamar"-->
+                <!--android:src="@drawable/star"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent" />-->
+
+    <br.com.felix.imagezoom.ImageZoom
+        android:id="@+id/fotoKamar"
+        android:adjustViewBounds="true"
+        android:src="@drawable/star"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
 
             <!--<com.example.imagewatermark2.ImageWaterMarkView-->
                 <!--android:id="@+id/fotoKamar"-->
