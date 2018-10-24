@@ -79,6 +79,9 @@ public class KamarDetailFragment extends Fragment {
             ImageZoom img2 = view.findViewById(R.id.fotoKamar2);
             img2.setImageResource(tipekamar.getGambar());
 
+            ImageZoom img3 = view.findViewById(R.id.fotoKamar3);
+            img3.setImageResource(tipekamar.getGambar2());
+
 
             GreyTouchImageView img = view.findViewById(R.id.fotoKamar);
             img.setImageResource(tipekamar.getGambar());

@@ -10,12 +10,9 @@
     <!-- TODO: Update blank fragment layout -->
     <!--<ScrollView-->
         <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
+        <!--android:layout_height="wrap_content">-->
 
-        <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:orientation="vertical">-->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -41,18 +38,34 @@
                 <!--android:layout_width="match_parent"-->
                 <!--android:layout_height="match_parent" />-->
 
-    <br.com.felix.imagezoom.ImageZoom
-        android:id="@+id/fotoKamar2"
-        android:adjustViewBounds="true"
-        android:src="@drawable/star"
+        <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+        android:orientation="horizontal">
 
-    <com.ladwa.aditya.greytouchimageview.GreyTouchImageView
-        android:id="@+id/fotoKamar"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:src="@drawable/star"/>
+            <br.com.felix.imagezoom.ImageZoom
+                android:id="@+id/fotoKamar2"
+                android:adjustViewBounds="true"
+                android:src="@drawable/star"
+                android:layout_marginRight="10dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+
+            <br.com.felix.imagezoom.ImageZoom
+                android:id="@+id/fotoKamar3"
+                android:adjustViewBounds="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/star"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+        </LinearLayout>
+
+            <com.ladwa.aditya.greytouchimageview.GreyTouchImageView
+                android:id="@+id/fotoKamar"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:src="@drawable/star"/>
 
             <!--<com.example.imagewatermark2.ImageWaterMarkView-->
                 <!--android:id="@+id/fotoKamar"-->
@@ -61,7 +74,7 @@
                 <!--android:layout_height="match_parent">-->
 
             <!--</com.example.imagewatermark2.ImageWaterMarkView>-->
-        <!--</LinearLayout>-->
+
     <!--</ScrollView>-->
 
 
