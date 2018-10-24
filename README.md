@@ -1,8 +1,6 @@
 # uts-koskosan
 
 
-# LoginFirebase
-
 
 Nama 1  : Andi Novan Prastya  (02)
 
