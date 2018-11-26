@@ -14,7 +14,7 @@ import com.example.andinovanprastya.loginfirebase.R;
 public class MyNotificationManager {
     private Context mCtx;
     private static MyNotificationManager mInstance;
-
+// builder notification
     private MyNotificationManager(Context context){
         mCtx = context;
     }

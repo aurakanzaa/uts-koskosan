@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LoginFirebase</string>
+    <string name="app_name">Koskosan</string>
     <string name="label_google_sign_in">Firebase + Google Sign In</string>
     <string name="desc_google_sign_in">Use a Google Sign In credential to authenticate with Firebase.</string>
 
@@ -98,4 +98,5 @@
     <string name="btn_forgot_password">Forgot your password?</string>
     <string name="action_sign_in_short">Register</string>
     <string name="btn_link_to_login">Login</string>
+    <string name="name_kamar">Detail Kamar</string>
 </resources>

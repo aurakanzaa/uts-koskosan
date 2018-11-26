@@ -25,7 +25,27 @@ import br.com.felix.imagezoom.ImageZoom;
 
 public class KamarDetailFragment extends Fragment {
     private long kosId;
-    ImageWaterMarkView waterMarkView;
+
+    // activity digunakan untuk menampilkan layout (hanya 1) yg dpt membuat xml dan java
+    // fragment merupakan sub activity yang dapat digunakan berkali kali
+
+    // lifecycle activity ada 7, onstart, oncreate, on pause, on resume, on destroy, on stop, on restart
+    // lifecycle fragment ada banyak, on createview, on attach, on detach, on activity created, on view state restore, on destroy view
+
+    //notifikasi lewat console dsb notif
+    // notif lewat postman dsb data
+
+    // notifikasi berjalan di on background(pas aplikasi di tutup)
+    // notif berjalan di forgrground ppas aplikasi dibuka
+
+    // firebase adalah platform oleh gugel untuk mempermudah pengguna dalam mengembangkan aplikasi yg tlh dia buat
+    // fcm adalah google api digunakan untuk mengirim pesan , mengirim pesan sampai 4kb
+
+    // attach memanggil 1x di activity menempelkan fragment ke activity
+    // detach digunakan ketika fragment gada di activity
+    // on create view tumpukan
+
+    // backstagk tumpukan activity atau fragment
 
     public KamarDetailFragment() {
         // Required empty public constructor
@@ -35,21 +55,9 @@ public class KamarDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-//        WaterMarkParamBean paramBean3 = new WaterMarkParamBean().setType(WaterMarkType.TYPE_TEXT)
-//                .setLeft(30)
-//                .setTop(30)
-//                .setWidth(450)
-//                .setHeight(50)
-//                .setUserInputText("Kosan Malang----")
-//                .setFontColor("#000000")
-//                .setFontSize(60);
-//        ArrayList<WaterMarkParamBean> list = new ArrayList<>();
-////        list.add(paramBean2);
-//        list.add(paramBean3);
-////        list.add(paramBean);
-//        waterMarkView.setWaterMarkData(list);
 
         // Inflate the layout for this fragment
+        // return ke halaman trsebut
         return inflater.inflate(R.layout.fragment_kamar_detail, container, false);
     }
 

@@ -21,6 +21,7 @@ public class KamarFragment extends ListFragment {
         // Required empty public constructor
     }
 
+    // menampilkan dataset dari array
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class KamarFragment extends ListFragment {
         void itemClicked(long id);
     }
 
+    // create listener
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);

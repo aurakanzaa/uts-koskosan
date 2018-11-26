@@ -36,6 +36,7 @@ public class SignoutFragment extends Fragment {
         // Required empty public constructor
     }
 
+    // panggil function signout
     public static SignoutFragment newInstance(String param1, String param2) {
         SignoutFragment fragment = new SignoutFragment();
 
@@ -48,6 +49,7 @@ public class SignoutFragment extends Fragment {
 
     }
 
+    // setting dan menampilkan toast ketika logout dan meneruskan ke halaman loginactivity(halaman yg dituju)
     private void setupFirebaseListener(){
         Log.d(TAG, "setupFirebaseListener: settong up the auth state listener");
         mAuth = new FirebaseAuth.AuthStateListener() {
@@ -81,6 +83,7 @@ public class SignoutFragment extends Fragment {
         }
     }
 
+    // ketika menekan button logout dan tampil
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

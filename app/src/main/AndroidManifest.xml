@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".login.LoginActivity"
+            android:label="Login"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,10 +40,11 @@
             android:name=".login.EmailPasswordActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DetailActivity" />
+        <activity android:name=".DetailActivity"
+            android:label="@string/name_kamar"/>
         <activity android:name=".MenuActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".login.RegisterActivity"></activity>
+        <activity android:name=".login.RegisterActivity" android:label="Register"></activity>
     </application>
 
 </manifest>
