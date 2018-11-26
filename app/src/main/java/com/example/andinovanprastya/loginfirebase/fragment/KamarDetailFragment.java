@@ -84,15 +84,21 @@ public class KamarDetailFragment extends Fragment {
 //            ImageView img = view.findViewById(R.id.fotoKamar);
 //            img.setImageResource(tipekamar.getGambar());
 
+            ImageZoom img = view.findViewById(R.id.fotoKamar);
+            img.setImageResource(tipekamar.getGambar4());
+
             ImageZoom img2 = view.findViewById(R.id.fotoKamar2);
             img2.setImageResource(tipekamar.getGambar());
 
             ImageZoom img3 = view.findViewById(R.id.fotoKamar3);
             img3.setImageResource(tipekamar.getGambar2());
 
+            ImageZoom img4 = view.findViewById(R.id.fotoKamar4);
+            img4.setImageResource(tipekamar.getGambar3());
 
-            GreyTouchImageView img = view.findViewById(R.id.fotoKamar);
-            img.setImageResource(tipekamar.getGambar());
+
+//            GreyTouchImageView img = view.findViewById(R.id.fotoKamar);
+//            img.setImageResource(tipekamar.getGambar());
 
 
 //            waterMarkView= (ImageWaterMarkView) view.findViewById(R.id.fotoKamar);

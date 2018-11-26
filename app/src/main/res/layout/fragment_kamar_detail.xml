@@ -39,10 +39,10 @@
                 <!--android:layout_height="match_parent" />-->
 
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="20dp"
-        android:orientation="horizontal">
+            android:orientation="horizontal">
 
             <br.com.felix.imagezoom.ImageZoom
                 android:id="@+id/fotoKamar2"
@@ -59,13 +59,27 @@
                 android:src="@drawable/star"
                 android:layout_width="80dp"
                 android:layout_height="80dp" />
+
+            <br.com.felix.imagezoom.ImageZoom
+                android:id="@+id/fotoKamar4"
+                android:adjustViewBounds="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/star"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
         </LinearLayout>
 
-            <com.ladwa.aditya.greytouchimageview.GreyTouchImageView
+            <br.com.felix.imagezoom.ImageZoom
                 android:id="@+id/fotoKamar"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
-                android:src="@drawable/star"/>
+                android:src="@drawable/star" />
+
+            <!--<com.ladwa.aditya.greytouchimageview.GreyTouchImageView-->
+                <!--android:id="@+id/fotoKamar"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="130dp"-->
+                <!--android:src="@drawable/star"/>-->
 
             <!--<com.example.imagewatermark2.ImageWaterMarkView-->
                 <!--android:id="@+id/fotoKamar"-->
