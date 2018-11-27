@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.andinovanprastya.loginfirebase.fragment.InformationFragment;
 import com.example.andinovanprastya.loginfirebase.fragment.KamarDetailFragment;
 import com.example.andinovanprastya.loginfirebase.fragment.KamarFragment;
 import com.example.andinovanprastya.loginfirebase.fragment.SignoutFragment;
@@ -99,10 +100,12 @@ public class MenuActivity extends AppCompatActivity
         if (id == R.id.nav_kamar) {
             fm = getSupportFragmentManager();
             fm.beginTransaction().replace(R.id.fm_pager_nav, new KamarFragment()).commit();
-            getSupportActionBar().setTitle("Tipe Kamar");
+            getSupportActionBar().setTitle("Guest House");
 
-        } else if (id == R.id.nav_comingsoon) {
-
+        } else if (id == R.id.nav_detail) {
+            fm = getSupportFragmentManager();
+            fm.beginTransaction().replace(R.id.fm_pager_nav, new InformationFragment()).commit();
+            getSupportActionBar().setTitle("Informasi");
         } else if (id == R.id.nav_send) {
             fm = getSupportFragmentManager();
             fm.beginTransaction().replace(R.id.fm_pager_nav, new SignoutFragment()).commit();

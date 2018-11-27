@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.andinovanprastya.loginfirebase">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/mansion"
@@ -11,8 +13,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".login.LoginActivity"
-            android:label="Login"
-            >
+            android:label="Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,19 +21,17 @@
             </intent-filter>
         </activity>
 
-        <!--SERVICE TOKEN-->
-        <service
-            android:name=".notification.MyFirebaseInstanceService">
+        <!-- SERVICE TOKEN -->
+        <service android:name=".notification.MyFirebaseInstanceService">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
 
-        <!--MESSAGING-->
-        <service
-            android:name=".notification.MyFirebaseMessagingService">
+        <!-- MESSAGING -->
+        <service android:name=".notification.MyFirebaseMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
@@ -40,11 +39,19 @@
             android:name=".login.EmailPasswordActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DetailActivity"
-            android:label="@string/name_kamar"/>
-        <activity android:name=".MenuActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".login.RegisterActivity" android:label="Register"></activity>
+        <activity
+            android:name=".DetailActivity"
+            android:label="@string/name_kamar" />
+        <activity
+            android:name=".MenuActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".login.RegisterActivity"
+            android:label="Register" />
+        <activity android:name=".VideoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+        </activity>
     </application>
 
 </manifest>
