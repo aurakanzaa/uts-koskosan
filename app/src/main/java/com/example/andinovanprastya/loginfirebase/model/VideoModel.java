@@ -11,19 +11,19 @@ public class VideoModel {
     public static final VideoModel[] guesthouse ={
             new VideoModel("DeCorner",
                     "2:23",
-                    "decorner"),
+                    "https://youtu.be/p5AykYigWek"),
             new VideoModel("Kawi",
                     "2:13",
-                    "kawi"),
+                    "https://youtu.be/piiGlq8mP04"),
             new VideoModel("Helena",
                     "2:27",
-                    "helena"),
+                    "https://youtu.be/dhZ5nmt_efU"),
             new VideoModel("Merbabu",
                     "3:02",
-                    "merbabu"),
+                    "https://youtu.be/N86-uaAymeY"),
             new VideoModel("Omah Koe",
                     "1:56",
-                    "omahkoe")
+                    "https://youtu.be/sRUorqq159o")
     };
 
     // setiap data punya nama, deskripsi dan gambar
