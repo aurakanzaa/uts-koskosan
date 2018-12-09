@@ -134,7 +134,7 @@ public class VideoActivity extends AppCompatActivity {
                 new MediaPlayer.OnPreparedListener() {
                     @Override
                     public void onPrepared(MediaPlayer mp) {
-                        
+
                         // sembunyikan text loading
                         textLoading.setVisibility(VideoView.INVISIBLE);
 
