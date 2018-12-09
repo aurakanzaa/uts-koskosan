@@ -48,6 +48,7 @@
                 android:id="@+id/fotoKamar2"
                 android:adjustViewBounds="true"
                 android:src="@drawable/star"
+                android:scaleType="centerCrop"
                 android:layout_marginRight="10dp"
                 android:layout_width="80dp"
                 android:layout_height="80dp" />
@@ -56,6 +57,7 @@
                 android:id="@+id/fotoKamar3"
                 android:adjustViewBounds="true"
                 android:layout_marginRight="10dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/star"
                 android:layout_width="80dp"
                 android:layout_height="80dp" />
@@ -63,6 +65,7 @@
             <br.com.felix.imagezoom.ImageZoom
                 android:id="@+id/fotoKamar4"
                 android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
                 android:layout_marginRight="10dp"
                 android:src="@drawable/star"
                 android:layout_width="80dp"
@@ -72,7 +75,8 @@
             <br.com.felix.imagezoom.ImageZoom
                 android:id="@+id/fotoKamar"
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
                 android:src="@drawable/star" />
 
             <!--<com.ladwa.aditya.greytouchimageview.GreyTouchImageView-->
