@@ -12,10 +12,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.andinovanprastya.loginfirebase.R;
+import com.example.andinovanprastya.loginfirebase.model.DataHelper;
 import com.example.andinovanprastya.loginfirebase.model.Kamar;
 
 public class KamarFragment extends ListFragment {
     private Listener listener;
+    private DataHelper dataHelper;
 
     public KamarFragment() {
         // Required empty public constructor

@@ -18,7 +18,19 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/textTitle"
-                android:text="Tipe Kamar" />
+                android:text="NAMA GUEST HOUSE" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ALAMAAT"
+                android:id="@+id/textAlamat"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TELP"
+                android:id="@+id/textTelp"/>
 
             <TextView
                 android:layout_width="wrap_content"
