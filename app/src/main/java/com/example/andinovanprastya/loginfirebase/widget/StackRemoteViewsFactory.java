@@ -25,6 +25,8 @@ public class StackRemoteViewsFactory implements RemoteViewsService.RemoteViewsFa
     private List<Bitmap> mWidgetItems = new ArrayList<>();
     private Context context;
     private int mAppWidgetId;
+    private Cursor cursor;
+    Kamar data;
 
     public StackRemoteViewsFactory(Context context, Intent intent) {
         this.context = context;
@@ -35,11 +37,11 @@ public class StackRemoteViewsFactory implements RemoteViewsService.RemoteViewsFa
 
     @Override
     public void onCreate() {
-        mWidgetItems.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.kawi1));
+        mWidgetItems.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.kawi3));
         mWidgetItems.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.merbabu1));
-        mWidgetItems.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.decorner1));
+        mWidgetItems.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.decorner4));
         mWidgetItems.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.omah1));
-        mWidgetItems.add(BitmapFactory.decodeResource(context.getResources(),R.drawable.helena1));
+        mWidgetItems.add(BitmapFactory.decodeResource(context.getResources(),R.drawable.helena3));
 
     }
 
@@ -62,6 +64,7 @@ public class StackRemoteViewsFactory implements RemoteViewsService.RemoteViewsFa
     @Override
     public int getCount() {
         return mWidgetItems.size();
+//        return cursor.getCount();
     }
 
 
@@ -74,6 +77,13 @@ public class StackRemoteViewsFactory implements RemoteViewsService.RemoteViewsFa
         extras.putInt(NewAppWidget.EXTRA_ITEM,position );
         Intent fillInIntent = new Intent();
         fillInIntent.putExtras(extras);
+
+//        if(cursor.moveToPosition(position)){
+//            data = new Kamar(cursor);
+//            String tittle = data.getName();
+//            rv.setTextViewText(R.id.tv_tittle, tittle);
+//        }
+
 
         rv.setOnClickFillInIntent(R.id.imageView,fillInIntent );
         return rv;

@@ -1,6 +1,10 @@
 package com.example.andinovanprastya.loginfirebase.model;
 
+import android.database.Cursor;
+
 import com.example.andinovanprastya.loginfirebase.R;
+
+import static android.provider.BaseColumns._ID;
 
 public class Kamar {
     private String nama_kamar;
@@ -29,6 +33,8 @@ public class Kamar {
         this.gambar3 = image3;
         this.gambar4 = image4;
     }
+
+
 
     public String getName() {
         return nama_kamar;
