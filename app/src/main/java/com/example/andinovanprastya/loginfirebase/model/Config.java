@@ -1,5 +1,6 @@
 package com.example.andinovanprastya.loginfirebase.model;
 
+import android.database.Cursor;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
@@ -18,6 +19,10 @@ public class Config {
         public static final String FIELD_ALAMAT = "alamat";
         public static final String FIELD_TELP = "telp";
         public static final String FIELD_HARGA = "harga";
+    }
+
+    public static String getColomnString(Cursor cursor, String colomnName) {
+        return cursor.getString(cursor.getColumnIndex(colomnName));
     }
 
     public static final String BUNDLE_EXTRA_ITEM = "com.example.andinovanprastya.loginfirebase.EXTRA_ITEM";
