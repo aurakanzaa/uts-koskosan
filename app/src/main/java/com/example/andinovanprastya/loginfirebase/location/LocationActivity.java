@@ -38,6 +38,7 @@ import com.google.android.gms.tasks.Task;
 
 public class LocationActivity extends AppCompatActivity implements DapatkanAlamatTask.onTaskSelesai{
 
+    //button picker map untuk memilih guest house
     public Button button_pilihguesthouse;
     private Button mLocationButton;
     private TextView mLocationTextView;
@@ -62,19 +63,19 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
                     (new OnCompleteListener<PlaceLikelihoodBufferResponse>() {
                         @Override
                         public void onComplete(@NonNull Task<PlaceLikelihoodBufferResponse> task) {
-                            if (task.isSuccessful()){
+                            if (task.isSuccessful()) {
                                 PlaceLikelihoodBufferResponse likelyPlaces = task.getResult();
                                 float maxLikelihood = 0;
                                 Place currentPlace = null;
 
-                                for (PlaceLikelihood placeLikelihood : likelyPlaces){
-                                    if (maxLikelihood < placeLikelihood.getLikelihood()){
+                                for (PlaceLikelihood placeLikelihood : likelyPlaces) {
+                                    if (maxLikelihood < placeLikelihood.getLikelihood()) {
                                         maxLikelihood = placeLikelihood.getLikelihood();
                                         currentPlace = placeLikelihood.getPlace();
                                     }
                                 }
                                 //tampilkan di ui
-                                if (currentPlace != null){
+                                if (currentPlace != null) {
                                     //ubah icon berdasar tipe lokasi
                                     setTipeLokasi(currentPlace);
 
@@ -97,10 +98,6 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
                         }
                     });
 
-            //update UI dengan tampilan hasil alamat
-            //ini di praktikum 10 dihapus
-//            mLocationTextView.setText(getString(R.string.alamat_text,
-//                    result, System.currentTimeMillis()));
         }
 
     }
@@ -113,6 +110,7 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
             Place place = PlacePicker.getPlace(this, data);
 
             setTipeLokasi(place);
+            //untuk mendapatkan nama lokasi
             mLocationTextView.setText(
                     getString(R.string.alamat_text,
                             place.getName(),
@@ -129,8 +127,10 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
 
+        //untuk mendapat informasi lokasi device
         mPlaceDetectionClient = Places.getPlaceDetectionClient(this);
 
+        //deklarasi button, textview dan imageview
         mLocationButton = (Button) findViewById(R.id.button_location);
         mLocationTextView = (TextView) findViewById(R.id.textview_location);
         mAndroidImageView = (ImageView) findViewById(R.id.imageview_android);
@@ -153,6 +153,7 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
             }
         });
 
+        //button pilih guesthouse untuk menampilkan location picker
         button_pilihguesthouse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -183,6 +184,7 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
 
     }
 
+    //untuk mentracking lokasi device
     private void mulaiTrackingLokasi() {
         if (ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
@@ -191,8 +193,6 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
                             {Manifest.permission.ACCESS_FINE_LOCATION},
                     REQUEST_LOCATION_PERMISSION);
         } else {
-//            Log.d("GETPERMISI", "mulaiTrackingLokasi: permissions granted");
-//            Log.d("GETPERMISI", "mulaiTrackingLokasi: permissions granted");
             mFusedLocationClient.requestLocationUpdates
                     (getLocationRequest(), mLocationCallback, null);
             //menampilkan text loading
@@ -223,6 +223,7 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
         }
     }
 
+    //menghentikan pencarian lokasi device
     private void stopTrackingLokasi(){
         if (mTrackingLocation){
             mTrackingLocation = false;
@@ -233,6 +234,7 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
         }
     }
 
+    //request untuk mencari lokasi device
     private LocationRequest getLocationRequest(){
         LocationRequest locationRequest = new LocationRequest();
         locationRequest.setInterval(10000);
@@ -241,6 +243,7 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
         return locationRequest;
     }
 
+    //mencari tipe lokasi
     private void setTipeLokasi(Place currentPlace){
         int drawableID = -1;
         for (Integer placeType : currentPlace.getPlaceTypes()){
@@ -250,6 +253,7 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
                     break;
             }
         }
+        //menampilkan animasi tidak berada di guest house ketika posisi device tidak di lokasi guest house
         if (drawableID < 0) {
             drawableID = R.drawable.tidakguesthouse;
         }
