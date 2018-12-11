@@ -56,22 +56,20 @@ min Sdk version yang digunakan adalah 15, Android OS Ice Cream Sandwich
       10. RegisterActivity (digunakan untuk proses register akun baru)
       11. TokenBroadcastReceiver (digunakan untuk menerima token)
       
-      12. Config ()
-      13. DataHelper ()
-      14. Kamar (digunakan untuk menyimpan detail dari kamar)
-      15. VideoModel ()
+      12. Kamar (digunakan untuk menyimpan detail dari kamar)
+      13. VideoModel () (digunakan untuk create object video)
 
-      16. MyFirebaseInstanceService (digunakan untuk mendapatkan token baru ketika aplikasi di install ulang)
-      17. MyFirebaseMessagingService (digunakan untuk menampilkan data pengirim dan menampilkan notifikasi dari data)
-      18. MyNotificationManager (digunakan untuk mengatur ketika user mengeklik notifikasi maka akan diarahkan ke halaman main_activity)
+      14. MyFirebaseInstanceService (digunakan untuk mendapatkan token baru ketika aplikasi di install ulang)
+      15. MyFirebaseMessagingService (digunakan untuk menampilkan data pengirim dan menampilkan notifikasi dari data)
+      16. MyNotificationManager (digunakan untuk mengatur ketika user mengeklik notifikasi maka akan diarahkan ke halaman main_activity)
 
-      19. NewAppWidget ()
-      20. StackRemoteViewsFactory ()
-      21. StackWidgetService ()
+      17. NewAppWidget () (digunakan unuk menampilkan gambar yang telah di simpan pada stackremoteviewsfactory)
+      18. StackRemoteViewsFactory () (Untuk menampung data kita membutuhkan sebuah kelas implementasi dari RemoteViewsService.RemoteViewsFactory)
+      19. StackWidgetService ()(sebuah class yg digunakan sebagai widget service)
 
-      22. VideoActivity (digunakan untuk menampilkan video)
-      23. DetailAcitivity (digunakan untuk menampilkan data detail berdasarkan id)
-      24. MenuActivity (digunakan untuk menampilkan menu pada aplikasi)
+      20. VideoActivity (digunakan untuk menampilkan video)
+      21. DetailAcitivity (digunakan untuk menampilkan data detail berdasarkan id)
+      22. MenuActivity (digunakan untuk menampilkan menu pada aplikasi)
 
 ## Referensi
 *[Dicoding](https://www.dicoding.com/academies/14) - Tutorial Widget
