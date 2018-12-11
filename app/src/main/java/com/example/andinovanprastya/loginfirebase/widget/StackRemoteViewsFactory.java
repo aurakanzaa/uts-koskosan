@@ -10,12 +10,15 @@ import android.os.Binder;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
 import com.example.andinovanprastya.loginfirebase.R;
 import com.example.andinovanprastya.loginfirebase.model.Config;
 import com.example.andinovanprastya.loginfirebase.model.Kamar;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,6 +31,8 @@ public class StackRemoteViewsFactory implements RemoteViewsService.RemoteViewsFa
     private Cursor cursor;
     Kamar data;
 
+
+
     public StackRemoteViewsFactory(Context context, Intent intent) {
         this.context = context;
         mAppWidgetId = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,
@@ -37,6 +42,7 @@ public class StackRemoteViewsFactory implements RemoteViewsService.RemoteViewsFa
 
     @Override
     public void onCreate() {
+
         mWidgetItems.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.kawi3));
         mWidgetItems.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.merbabu1));
         mWidgetItems.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.decorner4));

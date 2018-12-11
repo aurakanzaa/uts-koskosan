@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,6 +17,8 @@ import com.example.andinovanprastya.loginfirebase.model.Kamar;
 import com.example.imagewatermark2.ImageWaterMarkView;
 import com.example.imagewatermark2.WaterMarkParamBean;
 import com.example.imagewatermark2.WaterMarkType;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.ladwa.aditya.greytouchimageview.GreyTouchImageView;
 
 import java.util.ArrayList;
@@ -25,6 +28,10 @@ import br.com.felix.imagezoom.ImageZoom;
 
 public class KamarDetailFragment extends Fragment {
     private long kosId;
+
+    // connect firebase
+    private FirebaseDatabase database;
+    private DatabaseReference mDatabase;
 
     // activity digunakan untuk menampilkan layout (hanya 1) yg dpt membuat xml dan java
     // fragment merupakan sub activity yang dapat digunakan berkali kali
@@ -55,6 +62,8 @@ public class KamarDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+  
 
         // Inflate the layout for this fragment
         // return ke halaman trsebut

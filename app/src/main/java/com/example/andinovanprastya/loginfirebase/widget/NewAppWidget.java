@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.example.andinovanprastya.loginfirebase.R;
 import com.example.andinovanprastya.loginfirebase.model.Config;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -20,6 +22,8 @@ import java.util.Date;
  * Implementation of App Widget functionality.
  */
 public class NewAppWidget extends AppWidgetProvider {
+
+
 
     public static final String TOAST_ACTION = "com.example.andinovanprastya.loginfirebase.TOAST_ACTION";
     public static final String EXTRA_ITEM = "com.example.andinovanprastya.loginfirebase.EXTRA_ITEM";
