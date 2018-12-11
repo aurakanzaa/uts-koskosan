@@ -39,5 +39,11 @@ dependencies {
 
     implementation 'com.github.felixsoares:ImageZoom:1.0'
     implementation 'com.github.LadwaAditya:GreyTouchImageView:1.0'
+
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+
+    implementation 'com.google.android.gms:play-services-places:16.0.0'
 }
 apply plugin: 'com.google.gms.google-services'
+
+com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true

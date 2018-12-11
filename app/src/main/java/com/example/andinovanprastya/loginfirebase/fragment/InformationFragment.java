@@ -13,6 +13,7 @@ import android.widget.Button;
 
 import com.example.andinovanprastya.loginfirebase.R;
 import com.example.andinovanprastya.loginfirebase.VideoActivity;
+import com.example.andinovanprastya.loginfirebase.location.LocationActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class InformationFragment extends Fragment {
@@ -67,7 +68,7 @@ public class InformationFragment extends Fragment {
         mLokasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(getActivity(), VideoActivity.class);
+                Intent in = new Intent(getActivity(), LocationActivity.class);
                 startActivity(in);
             }
         });
