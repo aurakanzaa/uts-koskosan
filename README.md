@@ -1,45 +1,82 @@
-# uts-koskosan
+# Guest House
+| Grup | 12 |
+| :---------------: | :---------------:|
+| Andi Novan Prastya | 02 |
+| Aura Kanza Caesaria | 04 |
 
+## Deskripsi
+Guest House adalah aplikasi Android yang digunakan untuk memberikan informasi berupa video profil, lokasi dan keterangan detail dari guest house yang ada di kota malang
 
+## Screenshots
++ Tampilan Login dan Register
+![Login dan Register](https://i.ibb.co/D5rFz60/Screenshot-2018-12-11-22-48-56-349-com-example-andinovanprastya-loginfirebase.png)
 
-Nama 1  : Andi Novan Prastya  (02)
++ Tampilan Home/ Halaman Utama
+![Home](https://i.ibb.co/vJr2z9z/Screenshot-2018-12-11-22-51-05-129-com-example-andinovanprastya-loginfirebase.png)
 
-Nama 2  : Aura Kanza Caesaria (04)
++ Sidebar
+![Drawer](https://i.ibb.co/Gx6ghxS/Screenshot-2018-12-11-22-51-07-504-com-example-andinovanprastya-loginfirebase.png)
 
++ List Guest House
+![List Guest House](https://i.ibb.co/dfyKfXL/Screenshot-2018-12-11-22-51-10-376-com-example-andinovanprastya-loginfirebase.png)
 
-Judul aplikasi : Koskosan
++ Detail Guest House setelah dipilih
+![Detail Guest House](https://i.ibb.co/0XXLtXc/Screenshot-2018-12-11-22-51-13-150-com-example-andinovanprastya-loginfirebase.png)
 
++ Tampilan Informasi berupa Lokasi dan Video Guest House
+![Informasi](https://i.ibb.co/gTfTzYZ/Screenshot-2018-12-11-22-51-20-939-com-example-andinovanprastya-loginfirebase.png)
 
-Deskripsi : Koskosan adalah aplikasi yang digunakan untuk melihat informasi koskosan yang ada di Kota Malang
++ Tampilan pencarian lokasi
+![Lokasi](https://i.ibb.co/t8Lw1cx/Screenshot-2018-12-11-22-51-24-254-com-example-andinovanprastya-loginfirebase.png)
 
++ Lokasi saat ini
+![Lokasi2](https://i.ibb.co/tmyXsnh/Screenshot-2018-12-11-22-51-32-128-com-example-andinovanprastya-loginfirebase.png)
 
-Requirement : Android OS (Ice Cream Sandwich) and level (15)
++ Media Playback menampilkan video Guest House
+![ListVideo](https://i.ibb.co/bm8sfzw/Screenshot-2018-12-11-22-52-07-612-com-example-andinovanprastya-loginfirebase.png)
 
++ Menu Sign Out
+![SignOut](https://i.ibb.co/YTc9F4K/Screenshot-2018-12-11-22-52-15-570-com-example-andinovanprastya-loginfirebase.png)
 
-    List class yang digunakan
+## Android OS dan Level
+min Sdk version yang digunakan adalah 15, Android OS Ice Cream Sandwich
+
+## List class
       1. KamarDetailFragment (fragment untuk detail kamar)
       2. KamarFrgament (fragment untuk jenis kamar)
       3. SignoutFragment (fragment untuk logout)
+      4. InfromationFragment (fragment untuk menampilkan video dan location)
+      
+      5. DapatkanAlamatTask (class untuk menambahkan location)
+      6. LocationActivity (untuk menampilkan location)
 
-      4. BaseActivity (digunakan untuk menampilkan progres dialog)
-      5. EmailPasswordActivity (digunakan untuk pengisian email dan password sebagai metode untuk login)
-      6. LoginAcitivity (digunakan untuk proses login)
-      7. RegisterActivity (digunakan untuk proses register akun baru)
-      8. TokenBroadcastReceiver (digunakan untuk menerima token)
+      7. BaseActivity (digunakan untuk menampilkan progres dialog)
+      8. EmailPasswordActivity (digunakan untuk pengisian email dan password sebagai metode untuk login)
+      9. LoginAcitivity (digunakan untuk proses login)
+      10. RegisterActivity (digunakan untuk proses register akun baru)
+      11. TokenBroadcastReceiver (digunakan untuk menerima token)
+      
+      12. Config ()
+      13. DataHelper ()
+      14. Kamar (digunakan untuk menyimpan detail dari kamar)
+      15. VideoModel ()
 
-      9. Kamar (digunakan untuk menyimpan detail dari kamar)
+      16. MyFirebaseInstanceService (digunakan untuk mendapatkan token baru ketika aplikasi di install ulang)
+      17. MyFirebaseMessagingService (digunakan untuk menampilkan data pengirim dan menampilkan notifikasi dari data)
+      18. MyNotificationManager (digunakan untuk mengatur ketika user mengeklik notifikasi maka akan diarahkan ke halaman main_activity)
 
-      10. MyFirebaseInstanceService (digunakan untuk mendapatkan token baru ketika aplikasi di install ulang)
-      11. MyFirebaseMessagingService (digunakan untuk menampilkan data pengirim dan menampilkan notifikasi dari data)
-      12. MyNotificationManager (digunakan untuk mengatur ketika user mengeklik notifikasi maka akan diarahkan ke halaman main_activity)
+      19. NewAppWidget ()
+      20. StackRemoteViewsFactory ()
+      21. StackWidgetService ()
 
-      13. DetailAcitivity (digunakan untuk menampilkan data detail berdasarkan id)
-      14. MenuActivity (digunakan untuk menampilkan menu pada aplikasi)
-  
-  
-License
+      22. VideoActivity (digunakan untuk menampilkan video)
+      23. DetailAcitivity (digunakan untuk menampilkan data detail berdasarkan id)
+      24. MenuActivity (digunakan untuk menampilkan menu pada aplikasi)
 
+## Referensi
+*[Dicoding](https://www.dicoding.com/academies/14) - Tutorial Widget
 
+## Lisensi
 MIT License
 
 Copyright (c) 2018 felixsoares
