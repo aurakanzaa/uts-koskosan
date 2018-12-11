@@ -1,45 +1,53 @@
-# uts-koskosan
+# Guest House
+| Grup | 12 |
+| :---------------: | :---------------:|
+| Andi Novan Prastya | 02 |
+| Aura Kanza Caesaria | 04 |
 
+## Deskripsi
+Guest House adalah aplikasi Android yang digunakan untuk memberikan informasi berupa video profil, lokasi dan keterangan detail dari guest house yang ada di kota malang
 
+## Screenshots
+![Layar Home](http://echarlie.co/wp-content/uploads/salon-booking-app-hareesh-dribbble-salon-design-app.jpg)
 
-Nama 1  : Andi Novan Prastya  (02)
+## Android OS dan Level
+min Sdk version yang digunakan adalah 15, Android OS Ice Cream Sandwich
 
-Nama 2  : Aura Kanza Caesaria (04)
-
-
-Judul aplikasi : Koskosan
-
-
-Deskripsi : Koskosan adalah aplikasi yang digunakan untuk melihat informasi koskosan yang ada di Kota Malang
-
-
-Requirement : Android OS (Ice Cream Sandwich) and level (15)
-
-
-    List class yang digunakan
+## List class
       1. KamarDetailFragment (fragment untuk detail kamar)
       2. KamarFrgament (fragment untuk jenis kamar)
       3. SignoutFragment (fragment untuk logout)
+      4. InfromationFragment (fragment untuk menampilkan video dan location)
+      
+      5. DapatkanAlamatTask (class untuk menambahkan location)
+      6. LocationActivity (untuk menampilkan location)
 
-      4. BaseActivity (digunakan untuk menampilkan progres dialog)
-      5. EmailPasswordActivity (digunakan untuk pengisian email dan password sebagai metode untuk login)
-      6. LoginAcitivity (digunakan untuk proses login)
-      7. RegisterActivity (digunakan untuk proses register akun baru)
-      8. TokenBroadcastReceiver (digunakan untuk menerima token)
+      7. BaseActivity (digunakan untuk menampilkan progres dialog)
+      8. EmailPasswordActivity (digunakan untuk pengisian email dan password sebagai metode untuk login)
+      9. LoginAcitivity (digunakan untuk proses login)
+      10. RegisterActivity (digunakan untuk proses register akun baru)
+      11. TokenBroadcastReceiver (digunakan untuk menerima token)
+      
+      12. Config ()
+      13. DataHelper ()
+      14. Kamar (digunakan untuk menyimpan detail dari kamar)
+      15. VideoModel ()
 
-      9. Kamar (digunakan untuk menyimpan detail dari kamar)
+      16. MyFirebaseInstanceService (digunakan untuk mendapatkan token baru ketika aplikasi di install ulang)
+      17. MyFirebaseMessagingService (digunakan untuk menampilkan data pengirim dan menampilkan notifikasi dari data)
+      18. MyNotificationManager (digunakan untuk mengatur ketika user mengeklik notifikasi maka akan diarahkan ke halaman main_activity)
 
-      10. MyFirebaseInstanceService (digunakan untuk mendapatkan token baru ketika aplikasi di install ulang)
-      11. MyFirebaseMessagingService (digunakan untuk menampilkan data pengirim dan menampilkan notifikasi dari data)
-      12. MyNotificationManager (digunakan untuk mengatur ketika user mengeklik notifikasi maka akan diarahkan ke halaman main_activity)
+      19. NewAppWidget ()
+      20. StackRemoteViewsFactory ()
+      21. StackWidgetService ()
 
-      13. DetailAcitivity (digunakan untuk menampilkan data detail berdasarkan id)
-      14. MenuActivity (digunakan untuk menampilkan menu pada aplikasi)
-  
-  
-License
+      22. VideoActivity (digunakan untuk menampilkan video)
+      23. DetailAcitivity (digunakan untuk menampilkan data detail berdasarkan id)
+      24. MenuActivity (digunakan untuk menampilkan menu pada aplikasi)
 
 
+
+## Lisensi
 MIT License
 
 Copyright (c) 2018 felixsoares
