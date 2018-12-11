@@ -21,7 +21,14 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.PlaceDetectionClient;
+import com.google.android.gms.location.places.PlaceLikelihood;
+import com.google.android.gms.location.places.PlaceLikelihoodBufferResponse;
+import com.google.android.gms.location.places.Places;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 
 public class LocationActivity extends AppCompatActivity implements DapatkanAlamatTask.onTaskSelesai{
 
@@ -34,13 +41,54 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
     private AnimatorSet mRotateAnim;
     private boolean mTrackingLocation;
     private LocationCallback mLocationCallback;
+    private PlaceDetectionClient mPlaceDetectionClient;
+    private String mLastPlaceName;
 
     @Override
-    public void onTaskCompleted(String result){
+    public void onTaskCompleted(final String result) throws  SecurityException{
         if (mTrackingLocation){
+
+            Task<PlaceLikelihoodBufferResponse> placeResult =
+                    mPlaceDetectionClient.getCurrentPlace(null);
+            placeResult.addOnCompleteListener
+                    (new OnCompleteListener<PlaceLikelihoodBufferResponse>() {
+                        @Override
+                        public void onComplete(@NonNull Task<PlaceLikelihoodBufferResponse> task) {
+                            if (task.isSuccessful()){
+                                PlaceLikelihoodBufferResponse likelyPlaces = task.getResult();
+                                float maxLikelihood = 0;
+                                Place currentPlace = null;
+
+                                for (PlaceLikelihood placeLikelihood : likelyPlaces){
+                                    if (maxLikelihood < placeLikelihood.getLikelihood()){
+                                        maxLikelihood = placeLikelihood.getLikelihood();
+                                        currentPlace = placeLikelihood.getPlace();
+                                    }
+                                }
+                                //tampilkan di ui
+                                if (currentPlace != null){
+                                    mLocationTextView.setText(
+                                            getString(R.string.alamat_text,
+                                                    currentPlace.getName(),
+                                                    result,
+                                                    System.currentTimeMillis()));
+                                    likelyPlaces.release();
+                                }
+
+                            } else {
+                                mLocationTextView.setText(
+                                        getString(R.string.alamat_text,
+                                                "Nama lokasi tidak ditemukan!",
+                                                result,
+                                                System.currentTimeMillis()));
+                            }
+                        }
+                    });
+
             //update UI dengan tampilan hasil alamat
-            mLocationTextView.setText(getString(R.string.alamat_text,
-                    result, System.currentTimeMillis()));
+            //ini di praktikum 10 dihapus
+//            mLocationTextView.setText(getString(R.string.alamat_text,
+//                    result, System.currentTimeMillis()));
         }
 
     }
@@ -49,6 +97,8 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
+
+        mPlaceDetectionClient = Places.getPlaceDetectionClient(this);
 
         mLocationButton = (Button) findViewById(R.id.button_location);
         mLocationTextView = (TextView) findViewById(R.id.textview_location);
@@ -100,6 +150,7 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
                     (getLocationRequest(), mLocationCallback, null);
             //menampilkan text loading
             mLocationTextView.setText(getString(R.string.alamat_text,
+                    "Sedang mencari nama tempat",
                     "Sedang mencari alamat",
                     System.currentTimeMillis()));
             mTrackingLocation = true;
