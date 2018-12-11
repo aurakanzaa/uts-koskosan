@@ -8,7 +8,7 @@
 Guest House adalah aplikasi Android yang digunakan untuk memberikan informasi berupa video profil, lokasi dan keterangan detail dari guest house yang ada di kota malang
 
 ## Screenshots
-![Layar Home](http://echarlie.co/wp-content/uploads/salon-booking-app-hareesh-dribbble-salon-design-app.jpg)
+![Layar Home](https://drive.google.com/open?id=1yZxQspF77kdNFU5TdQqyIyuspGWqyL6m)
 
 ## Android OS dan Level
 min Sdk version yang digunakan adalah 15, Android OS Ice Cream Sandwich
