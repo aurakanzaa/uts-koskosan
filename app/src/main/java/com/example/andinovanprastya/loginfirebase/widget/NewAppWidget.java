@@ -5,18 +5,11 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import com.example.andinovanprastya.loginfirebase.R;
-import com.example.andinovanprastya.loginfirebase.model.Config;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.text.DateFormat;
-import java.util.Date;
 
 /**
  * Implementation of App Widget functionality.
@@ -84,7 +77,7 @@ public class NewAppWidget extends AppWidgetProvider {
         if (intent.getAction().equals(TOAST_ACTION)) {
             int appWidgetId = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,
                     AppWidgetManager.INVALID_APPWIDGET_ID);
-            int viewIndex = intent.getIntExtra(Config.BUNDLE_EXTRA_ITEM, 0);
+            int viewIndex = intent.getIntExtra("extra", 0);
             Toast.makeText(context, "Touched view " + viewIndex, Toast.LENGTH_SHORT).show();
         }
         super.onReceive(context, intent);

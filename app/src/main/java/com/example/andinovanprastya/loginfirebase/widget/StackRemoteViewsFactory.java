@@ -6,21 +6,13 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.Binder;
 import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
 import com.example.andinovanprastya.loginfirebase.R;
-import com.example.andinovanprastya.loginfirebase.model.Config;
 import com.example.andinovanprastya.loginfirebase.model.Kamar;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
