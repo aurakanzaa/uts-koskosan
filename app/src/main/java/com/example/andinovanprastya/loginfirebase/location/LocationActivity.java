@@ -67,12 +67,16 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
                                 }
                                 //tampilkan di ui
                                 if (currentPlace != null){
+                                    //ubah icon berdasar tipe lokasi
+                                    setTipeLokasi(currentPlace);
+
                                     mLocationTextView.setText(
                                             getString(R.string.alamat_text,
                                                     currentPlace.getName(),
                                                     result,
                                                     System.currentTimeMillis()));
                                     likelyPlaces.release();
+
                                 }
 
                             } else {
@@ -192,6 +196,21 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
         locationRequest.setFastestInterval(5000);
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         return locationRequest;
+    }
+
+    private void setTipeLokasi(Place currentPlace){
+        int drawableID = -1;
+        for (Integer placeType : currentPlace.getPlaceTypes()){
+            switch (placeType){
+                case Place.TYPE_ROOM:
+                    drawableID = R.drawable.merbabu1;
+                    break;
+            }
+        }
+        if (drawableID < 0) {
+            drawableID = R.drawable.tidakguesthouse;
+        }
+        mAndroidImageView.setImageResource(drawableID);
     }
 
 }
