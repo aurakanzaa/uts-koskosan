@@ -30,7 +30,7 @@ public class NewAppWidget extends AppWidgetProvider {
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
-
+//        Kita memasang RemoteAdapter ke dalam widget dengan menggunakan obyek Intent dan nilai id dari RemoteView yaitu stack_view.
         Intent intent = new Intent(context, StackWidgetService.class);
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
         intent.setData(Uri.parse(intent.toUri(Intent.URI_INTENT_SCHEME)));
@@ -45,6 +45,8 @@ public class NewAppWidget extends AppWidgetProvider {
         toastIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
 
         intent.setData(Uri.parse(intent.toUri(Intent.URI_INTENT_SCHEME)));
+
+//        Kita menjalankan getBroadcast() untuk melakukan proses broadcast ketika salah satu widget ditekan.
         PendingIntent toastPendingIntent = PendingIntent.getBroadcast(context, 0, toastIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
         views.setPendingIntentTemplate(R.id.stack_view, toastPendingIntent);
@@ -73,6 +75,9 @@ public class NewAppWidget extends AppWidgetProvider {
         // Enter relevant functionality for when the last widget is disabled
     }
 
+
+//    Kode di atas akan dijalankan ketika widget ditekan. Seperti pada latihan sebelumnya,
+// percabangan digunakan untuk membedakan action yang terjadi. Kita dapat mengambil data action tersebut dengan memanfaatkan extra dari sebuah intent.
     @Override
     public void onReceive(Context context, Intent intent) {
         AppWidgetManager mgr = AppWidgetManager.getInstance(context);
