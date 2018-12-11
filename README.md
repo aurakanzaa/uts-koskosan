@@ -8,7 +8,35 @@
 Guest House adalah aplikasi Android yang digunakan untuk memberikan informasi berupa video profil, lokasi dan keterangan detail dari guest house yang ada di kota malang
 
 ## Screenshots
-![Layar Home](http://echarlie.co/wp-content/uploads/salon-booking-app-hareesh-dribbble-salon-design-app.jpg)
++ Tampilan Login dan Register
+![Login dan Register](https://i.ibb.co/D5rFz60/Screenshot-2018-12-11-22-48-56-349-com-example-andinovanprastya-loginfirebase.png)
+
++ Tampilan Home/ Halaman Utama
+![Home](https://i.ibb.co/vJr2z9z/Screenshot-2018-12-11-22-51-05-129-com-example-andinovanprastya-loginfirebase.png)
+
++ Sidebar
+![Drawer](https://i.ibb.co/Gx6ghxS/Screenshot-2018-12-11-22-51-07-504-com-example-andinovanprastya-loginfirebase.png)
+
++ List Guest House
+![List Guest House](https://i.ibb.co/dfyKfXL/Screenshot-2018-12-11-22-51-10-376-com-example-andinovanprastya-loginfirebase.png)
+
++ Detail Guest House setelah dipilih
+![Detail Guest House](https://i.ibb.co/0XXLtXc/Screenshot-2018-12-11-22-51-13-150-com-example-andinovanprastya-loginfirebase.png)
+
++ Tampilan Informasi berupa Lokasi dan Video Guest House
+![Informasi](https://i.ibb.co/gTfTzYZ/Screenshot-2018-12-11-22-51-20-939-com-example-andinovanprastya-loginfirebase.png)
+
++ Tampilan pencarian lokasi
+![Lokasi](https://i.ibb.co/t8Lw1cx/Screenshot-2018-12-11-22-51-24-254-com-example-andinovanprastya-loginfirebase.png)
+
++ Lokasi saat ini
+![Lokasi2](https://i.ibb.co/tmyXsnh/Screenshot-2018-12-11-22-51-32-128-com-example-andinovanprastya-loginfirebase.png)
+
++ Media Playback menampilkan video Guest House
+![ListVideo](https://i.ibb.co/bm8sfzw/Screenshot-2018-12-11-22-52-07-612-com-example-andinovanprastya-loginfirebase.png)
+
++ Menu Sign Out
+![SignOut](https://i.ibb.co/YTc9F4K/Screenshot-2018-12-11-22-52-15-570-com-example-andinovanprastya-loginfirebase.png)
 
 ## Android OS dan Level
 min Sdk version yang digunakan adalah 15, Android OS Ice Cream Sandwich
@@ -45,7 +73,8 @@ min Sdk version yang digunakan adalah 15, Android OS Ice Cream Sandwich
       23. DetailAcitivity (digunakan untuk menampilkan data detail berdasarkan id)
       24. MenuActivity (digunakan untuk menampilkan menu pada aplikasi)
 
-
+## Referensi
+*[Dicoding](https://www.dicoding.com/academies/14) - Tutorial Widget
 
 ## Lisensi
 MIT License
