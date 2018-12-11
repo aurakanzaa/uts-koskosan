@@ -3,6 +3,7 @@ package com.example.andinovanprastya.loginfirebase.location;
 import android.Manifest;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.support.annotation.NonNull;
@@ -16,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.andinovanprastya.loginfirebase.R;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -26,12 +29,16 @@ import com.google.android.gms.location.places.PlaceDetectionClient;
 import com.google.android.gms.location.places.PlaceLikelihood;
 import com.google.android.gms.location.places.PlaceLikelihoodBufferResponse;
 import com.google.android.gms.location.places.Places;
+import com.google.android.gms.location.places.ui.PlacePicker;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
+
+
 public class LocationActivity extends AppCompatActivity implements DapatkanAlamatTask.onTaskSelesai{
 
+    public Button button_pilihguesthouse;
     private Button mLocationButton;
     private TextView mLocationTextView;
     private static final int REQUEST_LOCATION_PERMISSION =1;
@@ -43,6 +50,7 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
     private LocationCallback mLocationCallback;
     private PlaceDetectionClient mPlaceDetectionClient;
     private String mLastPlaceName;
+    private static final int REQUEST_PICK_PLACE = 1;
 
     @Override
     public void onTaskCompleted(final String result) throws  SecurityException{
@@ -98,6 +106,25 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK){
+            Place place = PlacePicker.getPlace(this, data);
+
+            setTipeLokasi(place);
+            mLocationTextView.setText(
+                    getString(R.string.alamat_text,
+                            place.getName(),
+                            place.getAddress(),
+                            System.currentTimeMillis()));
+
+        } else {
+            mLocationTextView.setText("Anda belum memilih lokasi");
+        }
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
@@ -107,6 +134,7 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
         mLocationButton = (Button) findViewById(R.id.button_location);
         mLocationTextView = (TextView) findViewById(R.id.textview_location);
         mAndroidImageView = (ImageView) findViewById(R.id.imageview_android);
+        button_pilihguesthouse = (Button) findViewById(R.id.button_pilihguesthouse);
 
         //animasi
         mRotateAnim = (AnimatorSet) AnimatorInflater.loadAnimator
@@ -124,6 +152,21 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
                 }
             }
         });
+
+        button_pilihguesthouse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
+
+                try{
+                    startActivityForResult(builder.build(LocationActivity.this), REQUEST_PICK_PLACE );
+                } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException e){
+                    e.printStackTrace();
+                }
+            }
+        });
+
+
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
