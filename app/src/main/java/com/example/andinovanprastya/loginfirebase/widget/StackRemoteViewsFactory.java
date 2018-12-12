@@ -59,7 +59,7 @@ public class StackRemoteViewsFactory implements RemoteViewsService.RemoteViewsFa
 
     }
 
-//    Metode getCount() haruslah mengembalikan nilai jumlah isi dari data yang akan kita tampilkan. Jika datanya 0,
+// Metode getCount() haruslah mengembalikan nilai jumlah isi dari data yang akan kita tampilkan. Jika datanya 0,
 // maka tampilan yang ditampilkan akan sesuai dengan layout yang kita definisikan pada remoteviews.setEmptyView().
     @Override
     public int getCount() {
@@ -69,7 +69,7 @@ public class StackRemoteViewsFactory implements RemoteViewsService.RemoteViewsFa
 
 
 
-//    Pada metode kita memasang item yang berisikan imageview.
+// Pada metode kita memasang item yang berisikan imageview.
 // Kita akan memasang gambar bitmap dengan memanfaatkan remoteviews. Kemudian item tersebut akan ditampilkan oleh widget.
     @Override
     public RemoteViews getViewAt(int position) {

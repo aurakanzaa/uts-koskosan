@@ -57,6 +57,7 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
     public void onTaskCompleted(final String result) throws  SecurityException{
         if (mTrackingLocation){
 
+            // placelikelihood mencari lokasi yang hampir mirip yang akan di parsing menjadi alamat
             Task<PlaceLikelihoodBufferResponse> placeResult =
                     mPlaceDetectionClient.getCurrentPlace(null);
             placeResult.addOnCompleteListener
@@ -69,12 +70,13 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
                                 Place currentPlace = null;
 
                                 for (PlaceLikelihood placeLikelihood : likelyPlaces) {
+                                    // setting untuk mengatur ke arah mana user akan terbaca
                                     if (maxLikelihood < placeLikelihood.getLikelihood()) {
                                         maxLikelihood = placeLikelihood.getLikelihood();
                                         currentPlace = placeLikelihood.getPlace();
                                     }
                                 }
-                                //tampilkan di ui
+                                //tampilkan di ui menampilkan alamat/ lokasi saat ini
                                 if (currentPlace != null) {
                                     //ubah icon berdasar tipe lokasi
                                     setTipeLokasi(currentPlace);
@@ -102,6 +104,7 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
 
     }
 
+    // ketika place ditemukan
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -174,7 +177,7 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
         mLocationCallback = new LocationCallback(){
             @Override
             public void onLocationResult(LocationResult locationResult){
-                //jika tracking aktif, proses reverse geoode menjadi data alamat
+                //jika tracking aktif, proses reverse geocode menjadi data alamat
                 if (mTrackingLocation){
                     new DapatkanAlamatTask(LocationActivity.this, LocationActivity.this)
                             .execute(locationResult.getLastLocation());
@@ -193,8 +196,16 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
                             {Manifest.permission.ACCESS_FINE_LOCATION},
                     REQUEST_LOCATION_PERMISSION);
         } else {
+            // locationcallback digunakan untuk mengganti fungsi this (onLocationResult dan onLocationChanged)
+            // ConnectionCallbacks digunakan untuk mengetahui apakah koneksi dari LocationClient ke services berhasil atau tidak.
+            // OnConnectionFailedListener digunakan untuk menghandle ketika terjadi kegagalan saat koneks
+            // LocationListener digunakan untuk mengetahui ketika apabila ada update lokasi.
+            //
+
             mFusedLocationClient.requestLocationUpdates
                     (getLocationRequest(), mLocationCallback, null);
+            // mFusedLocationClient meminta lokasi terakhir yang diketahui, yang harus Anda lakukan hanyalah menelepo
+
             //menampilkan text loading
             mLocationTextView.setText(getString(R.string.alamat_text,
                     "Sedang mencari nama tempat",
@@ -206,6 +217,7 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
         }
     }
 
+    // jika permission tidak disetujui maka muncul toast maka hasil akan berhenti
     @Override
     public void onRequestPermissionsResult(
             int requestCode, @NonNull String[] permissions, @NonNull int[] grantResult) {
@@ -235,10 +247,13 @@ public class LocationActivity extends AppCompatActivity implements DapatkanAlama
     }
 
     //request untuk mencari lokasi device
+
+    // interval yg digunakan untuk mencari lokasi
     private LocationRequest getLocationRequest(){
         LocationRequest locationRequest = new LocationRequest();
         locationRequest.setInterval(10000);
         locationRequest.setFastestInterval(5000);
+
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         return locationRequest;
     }

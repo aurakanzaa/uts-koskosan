@@ -37,7 +37,7 @@ public class VideoActivity extends AppCompatActivity {
         videoView = findViewById(R.id.videoView);
         listView = findViewById(R.id.listView);
 
-        // menampilkan tulisan loading
+        // menampilkan tulisan loading...
         // set menjadi invisible
         textLoading = (TextView) findViewById(R.id.textLoading);
         textLoading.setVisibility(VideoView.INVISIBLE);
@@ -102,6 +102,9 @@ public class VideoActivity extends AppCompatActivity {
     private Uri dapatkanMedia(String namaMedia){
 //        return Uri.parse("android.resource://" +getPackageName()+
 //        "/raw/"+ namaMedia);
+
+        // class untuk cek apakah url valid atau tidak
+        // valid url ada http maka akan buka URL
         if(URLUtil.isValidUrl(namaMedia)){
             // media name dari external url
             return Uri.parse(namaMedia);

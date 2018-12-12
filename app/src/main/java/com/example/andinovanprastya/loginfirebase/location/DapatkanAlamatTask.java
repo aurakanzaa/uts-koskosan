@@ -20,11 +20,13 @@ public class DapatkanAlamatTask extends AsyncTask<Location, Void, String>{
     private Context mContext;
     private onTaskSelesai mListener;
 
+
     DapatkanAlamatTask(Context applicationContext, onTaskSelesai listener){
         mContext = applicationContext;
         mListener = listener;
     }
 
+    // mengambil alamat melalui koordinat long lat
     @Override
     protected String doInBackground(Location... locations) {
 
